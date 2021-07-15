@@ -1,0 +1,10 @@
+sudo: required
+services:
+ - docker
+language: python
+
+before_install:
+ - docker build -t flask/docker-flask Dockerfile . 
+
+script:
+ - docker exec flask/docker-flask pytest ./company/core/test.py -- --coverage
