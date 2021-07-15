@@ -6,4 +6,4 @@ before_install:
  - docker build -t flask/docker-flask -f Dockerfile . 
 
 script:
- - docker run flask/docker-flask pytest ./company/core/test.py -- --coverage
+ - docker run flask/docker-flask pytest ./company/core/test.py
