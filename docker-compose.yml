@@ -1,0 +1,19 @@
+version: '3'
+services:
+ redis-server:
+  image: 'redis:6.2-alpine'
+ web:
+  build: .
+  ports:
+    - "80:80"
+  volumes:
+    - ./main.py:/app/main.py
+    - ./company/:/app/company
+  restart: on-failure
+ tests:
+  build: .
+  volumes:
+    - ./main.py:/app/main.py
+    - ./company/:/app/company
+  command: ["pytest", "./company/core/test.py"]
+
