@@ -5,7 +5,7 @@ click
 Flask
 Flask-Dance
 Flask-DebugToolbar
-flask-login=0.4.1
+flask-login==0.4.1
 Flask-Migrate
 Flask-OAuth
 Flask-OAuthlib
