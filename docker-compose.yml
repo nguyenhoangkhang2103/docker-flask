@@ -9,6 +9,14 @@ services:
   volumes:
     - ./main.py:/app/main.py
     - ./company/:/app/company
+  environment:
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: asengame
+    POSTGRES_HOST: db
+    POSTGRES_PORT: 5432
+    POSTGRES_DB: postgres_db
+    depends_on:
+      db
   restart: on-failure
  tests:
   build: .
@@ -16,4 +24,13 @@ services:
     - ./main.py:/app/main.py
     - ./company/:/app/company
   command: ["pytest", "./company/core/test.py"]
-
+ db:
+  image: 'postgres:12.7-alpine'
+  environment:
+   POSTGRES_DB: postgres_db
+   POSTGRES_USER: postgres
+   POSTGRES_PASSWORD: asengame
+  ports:
+   - "5432:5432"
+  volumes:
+   - /var/lib/pgsql/data/:/var/lib/pgsql/data/

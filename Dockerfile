@@ -6,4 +6,4 @@ RUN apt-get update
 RUN apt install -y vim
 RUN pip install redis
 RUN pip install pytest
-EXPOSE 80
+RUN pip install -r r1.txt
