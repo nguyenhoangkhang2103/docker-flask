@@ -22,7 +22,7 @@ app.register_blueprint(users)
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:asengame@db:5432/postgres_db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 migrate = Migrate(app,db)
 #######################################################
 ### Login Configs ###
