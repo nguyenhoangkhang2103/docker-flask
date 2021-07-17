@@ -1,37 +1,26 @@
-{
-  "language": "generic",
-  "os": [
-    "linux"
-  ],
-  "dist": "xenial",
-  "sudo": true,
-  "services": [
-    "docker"
-  ],
-  "before_install": [
-    "docker build -t flask/docker-flask -f Dockerfile ."
-  ],
-  "script": [
-    "docker run flask/docker-flask pytest ./company/core/test.py"
-  ],
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push flask/flaskapp
-  "deploy": [
-    {
-      "provider": "elasticbeanstalk",
-      "edge": true,
-      "access_key_id": "$AWS_ACCESS_KEY",
-      "secret_access_key": "$AWS_SECRET_KEY",
-      "region": "us-east-2",
-      "app": "multi-docker",
-      "env": "Multidocker-env",
-      "bucket_path": "docker-multi",
-      "on": {
-        "branch": [
-          "master"
-        ]
-      },
-      "bucket": "elasticbeanstalk-us-east-2-039283364413"
-    }
-  ]
-}
+language: generic
+
+services:
+ - docker
+
+script:
+ - docker run flask/docker-flask pytest ./company/core/test.py
+
+after_succes:
+ - docker build -t flask/docker-flask -f Dockerfile .
+
+ - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+ - docker push flask/docker-flask
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: multi-docker
+  env: Multidocker-env
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket_name: "elasticbeanstalk-us-east-2-039283364413"
+  bucket_path: "multi-docker"
+  on:
+    branch: master
