@@ -1,0 +1,19 @@
+{
+ "AWSEBDockerrunVersion": 2
+ "containerDefinitions": [
+  {
+   "name":"web",
+   "image": "tiangolo/uwsgi-nginx-flask:python3.8",
+   "hostname": "web",
+   "essential": true,
+   "portMappings": [
+     {
+       "hostPort": 80,
+       "containerPort": 80
+     }
+   ]
+  }
+ ]
+}
+
+

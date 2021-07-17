@@ -2,6 +2,9 @@ version: '3'
 services:
  redis-server:
   image: 'redis:6.2-alpine'
+  environment:
+   - REDIS_HOST=redis_server
+   - REDIS_PORT=6379
  web:
   build: .
   ports:
