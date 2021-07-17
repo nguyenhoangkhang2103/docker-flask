@@ -18,8 +18,8 @@
 			"image": "postgres:12.7-alpine",
 			"memory": 100,
 			"mountPoints": [{
-				"containerPath": "/var/lib/postgresql/data/",
-				"sourceVolume": "postgres_data"
+				"containerPath": "/var/lib/pgsql/data/",
+				"sourceVolume": "/var/lib/pgsql/data/"
 			}],
 			"name": "db",
 			"portMappings": [{
@@ -42,14 +42,7 @@
 			"links": [
 				"redis-server",
 				"db"
-			],
-			"name": "web",
-			"image": "vagdevik/user-wishlist-app",
-			"memory": 100,
-			"portMappings": [{
-				"containerPort": 80,
-				"hostPort": 80
-			}]
+			]
 		}
 	]
 }
