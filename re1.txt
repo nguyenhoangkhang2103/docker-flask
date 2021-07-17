@@ -19,3 +19,4 @@ email_validator
 Pillow
 psycopg2-binary
 Flask-WTF
+python-logilab-common
