@@ -16,6 +16,7 @@ after_success:
  - docker push flask/docker-flask
 
 deploy:
+  skip_cleanup: true
   provider: elasticbeanstalk
   region: us-east-2
   app: multi-docker
