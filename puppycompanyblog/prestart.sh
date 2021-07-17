@@ -1,2 +1,2 @@
-un custom Python script before starting
+#Run custom Python script before starting
 python ./puppycompanyblog/createdb.py
