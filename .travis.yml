@@ -4,7 +4,7 @@ services:
  - docker
 
 script:
- - docker run flask/docker-flask pytest ./company/core/test.py
+ - docker exec flask/docker-flask pytest ./company/core/test.py
 
 after_succes:
  - docker build -t flask/docker-flask -f Dockerfile .
