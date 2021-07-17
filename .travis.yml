@@ -1,5 +1,5 @@
 {
-  "language": "python",
+  "language": "generic",
   "os": [
     "linux"
   ],
@@ -12,7 +12,7 @@
     "docker build -t flask/docker-flask -f Dockerfile ."
   ],
   "script": [
-    "docker exec flask/docker-flask pytest ./company/core/test.py"
+    "docker run flask/docker-flask pytest ./company/core/test.py"
   ],
   "deploy": [
     {
