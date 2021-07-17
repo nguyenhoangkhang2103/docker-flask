@@ -14,6 +14,8 @@
   "script": [
     "docker run flask/docker-flask pytest ./company/core/test.py"
   ],
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push flask/flaskapp
   "deploy": [
     {
       "provider": "elasticbeanstalk",
