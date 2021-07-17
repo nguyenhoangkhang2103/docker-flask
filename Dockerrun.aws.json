@@ -1,0 +1,48 @@
+{
+        "AWSEBDockerrunVersion": 2,
+        "containerDefinitions": [{
+                        "environment": [{
+                                        "name": "POSTGRES_USER",
+                                        "value": "postgres"
+                                },
+                                {
+                                        "name": "POSTGRES_PASSWORD",
+                                        "value": "asengame"
+                                },
+                                {
+                                        "name": "POSTGRES_DB",
+                                        "value": "postgres_db"
+                                }
+                        ],
+                        "essential": true,
+                        "image": "postgres:12.7-alpine",
+                        "memory": 100,
+                        "mountPoints": [{
+                                "containerPath": "/var/lib/pgsql/data/",
+                                "sourceVolume": "/var/lib/pgsql/data/"
+                        }],
+                        "name": "db",
+                        "portMappings": [{
+                                "containerPort": 5432,
+                                "hostPort": 5432
+                        }]
+                },
+                {
+                        "essential": true,
+                        "image": "redis:latest",
+                        "memory": 100,
+                        "name": "redis-server",
+                        "portMappings": [{
+                                "containerPort": 6379,
+                                "hostPort": 6379
+                        }]
+                },
+                {
+                        "essential": true,
+                        "links": [
+                                "redis-server",
+                                "db"
+                        ]
+                }
+        ]
+}
