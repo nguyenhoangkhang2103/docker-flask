@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
 	"AWSEBDockerrunVersion": 2,
 	"containerDefinitions": [{
 			"environment": [{
