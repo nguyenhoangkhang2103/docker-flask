@@ -6,9 +6,9 @@ services:
 script:
  - docker exec flask/docker-flask pytest ./company/core/test.py
 
-after_succes:
+before_install:
  - docker build -t flask/docker-flask -f Dockerfile .
-
+after_success:
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
  - docker push flask/docker-flask
