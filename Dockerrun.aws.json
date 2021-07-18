@@ -1,5 +1,5 @@
 {
-    "AWSEBDockerrunVersion": 2,
+    "AWSEBDockerrunVersion": "2",
     "containerDefinitions": [
         {
             "environment": [
@@ -101,7 +101,9 @@
                 }
             ],
             "name": "web",
-            "image": "https://hub.docker.com/r/asengame/flask-docker/flask-docker:latest",
+            "image": {
+              "Name": "asengame/flask-docker"
+            },
             "portMappings": [
                 {
                     "containerPort": 80,
