@@ -1,4 +1,4 @@
-FROM 039283364413.dkr.ecr.us-east-2.amazonaws.com/flask-docker:latest
+FROM asengame/flask-docker
 
 
 RUN apt-get update
