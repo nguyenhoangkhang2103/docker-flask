@@ -1,7 +1,6 @@
 alembic
 blinker
 chardet
-click
 Flask
 Flask-Dance
 Flask-DebugToolbar
