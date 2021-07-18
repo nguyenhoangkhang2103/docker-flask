@@ -17,7 +17,7 @@
                 }
             ],
             "essential": true,
-            "image": "postgres:12.7-alpine",
+            "image": "postgres",
             "mountPoints": [
                 {
                     "containerPath": "/var/lib/psql/data",
@@ -44,7 +44,7 @@
                 }
             ],
             "essential": true,
-            "image": "redis:6.2-alpine",
+            "image": "redis",
             "name": "redis-server",
             "memory": 120
         },
