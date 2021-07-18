@@ -101,7 +101,7 @@
                 }
             ],
             "name": "web",
-            "image": "asengame/flask-docker:latest",
+            "image": "vagdevik/user-wishlist-app",
             "portMappings": [
                 {
                     "containerPort": 80,
@@ -132,5 +132,4 @@
         }
     ]
 }
-
 
