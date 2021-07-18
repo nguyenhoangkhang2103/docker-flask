@@ -1,6 +1,5 @@
-FROM tiangolo/uwsgi-nginx-flask:python3.8
+FROM asengame/flask-docker:latest
 
-COPY ./ /app
 
 RUN apt-get update
 RUN apt install -y vim

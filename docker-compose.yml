@@ -11,7 +11,7 @@ services:
     - "80:80"
   volumes:
     - ./main.py:/app/main.py
-    - ./company/:/app/company
+    - ./puppycompanyblog/:/app/puppycompanyblog
   environment:
      POSTGRES_USER: postgres
      POSTGRES_PASSWORD: asengame
@@ -24,7 +24,7 @@ services:
   build: .
   volumes:
     - ./main.py:/app/main.py
-    - ./company/:/app/company
+    - ./puppycompanyblog/:/app/puppycompanyblog
   command: ["pytest", "./puppycompanyblog/test.py"]
  db:
   image: 'postgres:12.7-alpine'
