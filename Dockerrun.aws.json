@@ -101,6 +101,7 @@
                 }
             ],
             "name": "web",
+            "image": "asengame/flask-docker",
             "portMappings": [
                 {
                     "containerPort": 80,
