@@ -101,8 +101,7 @@
                 }
             ],
             "name": "web",
-            "image": "asengame/flask-docker",
-	    "memory": 120,
+            "image": "https://hub.docker.com/r/asengame/flask-docker/flask-docker:latest",
             "portMappings": [
                 {
                     "containerPort": 80,
