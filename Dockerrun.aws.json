@@ -101,7 +101,7 @@
                 }
             ],
             "name": "web",
-            "image": "asengame/flask-docker",
+            "image": "039283364413.dkr.ecr.us-east-2.amazonaws.com/flask-docker:latest",
             "portMappings": [
                 {
                     "containerPort": 80,
