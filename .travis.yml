@@ -19,7 +19,7 @@ deploy:
   provider: elasticbeanstalk
   region: us-east-2
   app: multi-docker
-  env: Multidocker-env
+  env: Multidocker-env-1
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   bucket_name: "elasticbeanstalk-us-east-2-039283364413"
