@@ -3,19 +3,19 @@
 	"containerDefinitions": [{
 			"environment": [{
 					"name": "POSTGRES_USER",
-					"value": POSTGRES_USER
+					"value": $POSTGRES_USER
 				},
 				{
 					"name": "POSTGRES_PASSWORD",
-					"value": POSTGRES_PASSWORD
+					"value": $POSTGRES_PASSWORD
 				},
 				{
 					"name": "POSTGRES_DB",
-					"value": POSTGRES_DB
+					"value": $POSTGRES_DB
 				}
 			],
 			"essential": true,
-			"image": "postgres:12.7-alpine",
+			"image": "postgres:12-alpine",
 			"memory": 100,
 			"mountPoints": [{
 				"containerPath": "/var/lib/postgresql/data/"
