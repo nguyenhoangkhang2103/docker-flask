@@ -8,7 +8,7 @@ script:
  - docker ps -a 
 
 before_install:
- - docker build -t asengame/flask-docker -f Dockerfile .
+ - docker build -t asengame/flask-docker .
 after_success:
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
@@ -19,7 +19,7 @@ deploy:
   provider: elasticbeanstalk
   region: us-east-2
   app: multi-docker
-  env: Multidocker-env
+  env: Multidocker-env-1
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   bucket_name: "elasticbeanstalk-us-east-2-039283364413"
