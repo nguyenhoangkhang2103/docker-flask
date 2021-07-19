@@ -1,5 +1,4 @@
 alembic
-blinker
 chardet
 Flask
 Flask-Dance
