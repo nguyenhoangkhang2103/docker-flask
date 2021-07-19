@@ -9,9 +9,6 @@ services:
   image: asengame/flask-docker
   ports:
     - "80:80"
-  volumes:
-    - ./main.py:/app/main.py
-    - ./puppycompanyblog/:/app/puppycompanyblog
  db:
   image: postgres:12.7-alpine
   environment:
