@@ -51,6 +51,10 @@
         },
         {
             "essential": true,
+	    "links": [
+		"redis-server",
+		"db"
+            ],
             "image": "asengame/flask-docker",
             "name": "web",
 	    "memory": 100,
