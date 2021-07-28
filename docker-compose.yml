@@ -6,7 +6,7 @@ services:
    - REDIS_HOST=redis-server
    - REDIS_PORT=6379
  web:
-  image: asengame/flask-docker
+  image: asengame/flask-docker:v2
   ports:
     - "80:80"
   depends_on:
