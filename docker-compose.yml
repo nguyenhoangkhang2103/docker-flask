@@ -9,6 +9,9 @@ services:
   image: asengame/flask-docker
   ports:
     - "80:80"
+  depends_on:
+    - db
+    - redis-server
  db:
   image: postgres:12.7-alpine
   environment:

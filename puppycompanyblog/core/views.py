@@ -3,7 +3,7 @@ from puppycompanyblog.models import BlogPost
 
 core = Blueprint('core',__name__)
 
-@core.route('/')
+@core.route("/")
 def index():
     '''
     This is the home page view. Notice how it uses pagination to show a limited
