@@ -22,7 +22,7 @@ app.config['SECRET_KEY'] = 'mysecret'
 ###############################
 
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://flask_db_admin:asengame@postgres-cluster-ip-service:5432/flask_db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://flask_db_admin:asengame@db:5432/flask_db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
